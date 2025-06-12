@@ -10,7 +10,7 @@ body {
   width: 100%;
   font-family: cursive;
   background-color: rgb(254, 153, 95);
-  background-image: url("/cartographer.png");
+  background-image: url("images/cartographer.png");
   color: black;
   text-align: center;
 }
@@ -67,14 +67,12 @@ body {
   padding: 10px;
 }
 
-/* Left side: todo takes full height (both rows) */
 .todo {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
   overflow-y: auto;
 }
 
-/* Pomodoro top right quarter */
 .pomodoro {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -83,7 +81,6 @@ body {
   justify-content: start;
 }
 
-/* Bottom right quarter */
 .bottom-right {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
@@ -92,7 +89,6 @@ body {
   height: 100%;
 }
 
-/* Children of bottom-right side by side, filling space */
 .white-noise,
 .weather {
   flex: 1;
@@ -138,7 +134,7 @@ input {
 .hover-effect:hover {
   border: 2px solid white;
   background-color: rgb(253, 169, 120);
-  background-image: url("/cartographer.png");
+  background-image: url("images/cartographer.png");
 }
 
 .timer-container {

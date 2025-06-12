@@ -33,7 +33,7 @@ function AmbientPlayer() {
         Ambient {icon}
       </button>
       <audio id="whiteNoiseAudio" loop ref={audioRef}>
-        <source src="/sounds/brown_noise.mp3" type="audio/mpeg" />
+        <source src="sounds/brown_noise.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
       <div>
