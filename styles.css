@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: cursive;
+  background-color: rgb(254, 153, 95);
+  background-image: url("/cartographer.png");
+  color: black;
+  text-align: center;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #04aa6d;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px #999;
+}
+
+.custom-button:hover {
+  background-color: rgb(53, 53, 53);
+}
+
+.custom-button:active {
+  background-color: rgb(53, 53, 53);
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+}
+
+.green-button {
+  background-color: #04aa6d;
+}
+
+.red-button {
+  background-color: #f44336;
+}
+
+.grey-button {
+  background-color: grey;
+}
+
+.item-button {
+  border-radius: 6px;
+  padding: 3px;
+  margin: 2px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  height: 100vh;
+  padding: 10px;
+}
+
+/* Left side: todo takes full height (both rows) */
+.todo {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  overflow-y: auto;
+}
+
+/* Pomodoro top right quarter */
+.pomodoro {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+/* Bottom right quarter */
+.bottom-right {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+
+/* Children of bottom-right side by side, filling space */
+.white-noise,
+.weather {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-left: 150px;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  height: 40px;
+  font-family: cursive;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.hover-effect {
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  transition: border 0.2s ease;
+}
+.hover-effect:hover {
+  border: 2px solid white;
+  background-color: rgb(253, 169, 120);
+  background-image: url("/cartographer.png");
+}
+
+.timer-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  font-size: 100px;
+}
