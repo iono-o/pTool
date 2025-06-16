@@ -88,6 +88,10 @@ function Weather() {
 
   return (
     <div>
+      <h3>
+        current Location:{" "}
+        <span style={{ textDecoration: "underline" }}>{location}</span>
+      </h3>
       <input
         type="text"
         onChange={handleChange}
