@@ -6,7 +6,7 @@ import StopCircleSharpIcon from "@mui/icons-material/StopCircleSharp";
 /** component displays pomodoro timer with usable buttons*/
 function Timer() {
   const workDuration = 25 * 60;
-  const breakDuration = 3 * 60;
+  const breakDuration = 5 * 60;
 
   const [isRunning, setIsRunning] = useState(false);
   const [mode, setMode] = useState("work");

@@ -5,7 +5,7 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 /** component displays weatheremoji and temperature of input location*/
 function Weather() {
   const [inputText, setInputText] = useState("");
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("Berlin");
   const [currWeather, setCurrWeather] = useState(null);
   const [currTemperature, setTemperature] = useState(null);
 
@@ -64,21 +64,25 @@ function Weather() {
     }
   }
 
-  useEffect(() => {
-    // async  wrapper function
-    async function updateWeather() {
-      const coordinates = await getCoordinates(location);
-      const weather = await getWeather(coordinates);
-      console.log(weather);
-      if (weather) {
-        // https://open-meteo.com/en/docs?hourly=&current=temperature_2m,weather_code
-        setCurrWeather(getWeatherEmoji(weather.current.weather_code));
-        setTemperature(weather.current.temperature_2m);
-      } else {
-        setCurrWeather("❓ could not find location");
-        setTemperature(null);
-      }
+  async function updateWeather() {
+    const coordinates = await getCoordinates(location);
+    const weather = await getWeather(coordinates);
+    console.log(weather);
+    if (weather) {
+      // https://open-meteo.com/en/docs?hourly=&current=temperature_2m,weather_code
+      setCurrWeather(getWeatherEmoji(weather.current.weather_code));
+      setTemperature(weather.current.temperature_2m);
+    } else {
+      setCurrWeather("❓ could not find location");
+      setTemperature(null);
     }
+  }
+
+  useEffect(() => {
+    updateWeather();
+  });
+
+  useEffect(() => {
     updateWeather();
   }, [location]);
 
